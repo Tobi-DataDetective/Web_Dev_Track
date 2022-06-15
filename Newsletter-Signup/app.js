@@ -64,7 +64,7 @@ app.post("/", function(req, res) {
             console.log(JSON.parse(data))
         });
     });
-    // request.write(jsonData);
+    request.write(jsonData);
     // console.log(firstName, lastName, email);
     request.end();
 });
@@ -74,6 +74,6 @@ app.post("/failure", function(req, res) {
 });
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Running on port 3000");
 });

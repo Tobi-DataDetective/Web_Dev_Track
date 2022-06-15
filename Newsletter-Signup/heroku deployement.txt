@@ -1,0 +1,27 @@
+heroku login
+heroku --version
+node --version
+npm --version
+git --version
+
+
+make listen in app.js to be 'process.env.PORT'
+
+create a procfile
+
+run a git init on CLI  in the project folder
+
+git add .
+git commit -m "first commit"
+
+heroku create
+https://stark-retreat-65611.herokuapp.com/
+
+git push heroku master
+
+
+
+---creating update would be 
+git add.
+git commit -m "second update"
+git push heroku master
