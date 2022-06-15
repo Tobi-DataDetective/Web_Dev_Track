@@ -1,0 +1,219 @@
+<div class="navbar bg-dark">
+    <button class="btn btn-primary">Hello World</button>
+</div>
+
+
+<!-- 
+    Web Design Workflow
+
+The first thing to do is to wireframe i.e low representation of your design
+its meant to be done with a pencil or a paper.
+
+Another step to take opposite to the previous is a mockup
+ -->
+
+Navbar
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="">tindog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Download</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+Grid System
+
+<div class="row row-cols-1">
+    <div class="col-md-6" style="background-color:blue; border: 1px solid;"> col-md-6 </div>
+    <div class="col-md-6" style="background-color:blue; border: 1px solid;"> col-md-6 </div>
+</div>
+
+Containers
+
+<div class="container" style="background-color: red;">
+    Lorem ipsum dolor sit amet, sed nulla eget facilisis in pulvinar, dui auctor sed, augue ac, porta laoreet erat, erat rutrum eget. Nisl elit sapien quisque aliquam porta leo, augue nibh inceptos et ut expedita, suscipit erat vivamus a. Nullam odio diam.
+    In tincidunt ipsum penatibus class sed, vel ut viverra orci, eget arcu turpis risus non sodales. Maecenas elementum tempor risus. Quis faucibus laoreet. Velit sed velit dui tellus mauris morbi, maecenas mi, sapien velit, et sapien leo a vitae curae
+    duis.
+</div>
+
+<div class="container-fluid" style="background-color: yellow">
+    Lorem ipsum dolor sit amet, sed nulla eget facilisis in pulvinar, dui auctor sed, augue ac, porta laoreet erat, erat rutrum eget. Nisl elit sapien quisque aliquam porta leo, augue nibh inceptos et ut expedita, suscipit erat vivamus a. Nullam odio diam.
+    In tincidunt ipsum penatibus class sed, vel ut viverra orci, eget arcu turpis risus non sodales. Maecenas elementum tempor risus. Quis faucibus laoreet. Velit sed velit dui tellus mauris morbi, maecenas mi, sapien velit, et sapien leo a vitae curae
+    duis.
+</div>
+
+
+carousel
+<div id="testimonial-carousel" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="background-color: red;">
+            <img src="..." class="d-block w-100" alt="First Slide">
+        </div>
+        <div class="carousel-item" style="background-color: yellow;">
+            <img src="..." class="d-block w-100" alt="Second Slide">
+        </div>
+        <div class="carousel-item" style="background-color: blue;">
+            <img src="..." class="d-block w-100" alt="Third Slide">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+cards (boilerplate)
+<div class="card-deck">
+    <div class="card">
+        <div class="card-header">
+            Card Header
+        </div>
+        <div class="card-body">
+            Card Body
+        </div>
+    </div>
+</div>
+
+
+card advanced
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>10 users included</li>
+                    <li>2 GB of storage</li>
+                    <li>Email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>20 users included</li>
+                    <li>10 GB of storage</li>
+                    <li>Priority email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>30 users included</li>
+                    <li>15 GB of storage</li>
+                    <li>Phone and email support</li>
+                    <li>Help center access</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+Advanced css for sending images backwords (understanding the Z index)
+<!-- 
+    <div class="red">
+        red
+    </div>
+    <div class="yellow">
+        yellow
+    </div>
+    <div class="blue">
+        blue
+    </div>
+
+    div {
+    height:100px;
+    width:100px;
+    border: 1px solid;
+    position: absolute;
+}
+
+.red {
+    background-color: red;
+    z-index:-1;
+}
+.yellow {
+    background-color: yellow;
+    left:20px;
+    top:20px;
+    z-index:1;
+    
+}
+.blue {
+    background-color: blue;
+    left:40px;
+    top:40px;
+} -->
+
+Responsive layout (Media Query Breakpoints)
+<h1>
+    hellow world
+</h1>
+
+<!-- 
+    h1 {
+    font-size:30px;
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+  h1 {
+    color:red;
+    font-size:60px;
+}  
+}
+
+ -->
+
+class="btn btn-dark btn-lg download-button"><i class="fa-brands fa-apple"></i>
+
+
+<!--
+     Code Refactoring
+1. Readability
+2. Modularity
+3. Efficiency
+4. Length 
+-->

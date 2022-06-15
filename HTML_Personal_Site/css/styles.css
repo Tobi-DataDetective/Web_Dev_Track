@@ -1,0 +1,32 @@
+/* <!-- WORKING WITH EXTERNAL CSS --> */
+
+body {
+    background-color: #E0D8B0;
+    color: #CE9461;
+}
+
+hr {
+    background-color: none;
+    border-style: dashed none none none;
+    height: 0px;
+    width: 10%;
+    border-color: #CE9461;
+    border-width: 2px;
+}
+
+img {
+    height: 220px;
+    /* width: 20px; */
+}
+
+h1 {
+    color: #DEA057;
+}
+
+h3 {
+    color: #DEA057;
+}
+
+a {
+    color: #CE9461;
+}

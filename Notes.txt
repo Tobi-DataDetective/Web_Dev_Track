@@ -1,0 +1,32 @@
+course resources: https://www.appbrewery.co/p/web-development-course-resources
+emojis: "https://emojipedia-us
+code playgorund: https://codepen.io/pen/
+devdoc: https://devdocs.io/
+MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+Color designs:  https://colorhunt.co/
+fav icon: favicon.cc
+web safe fonts: https://www.w3schools.com/cssref/css_websafe_fonts.asp
+css font compatibilities: https://www.cssfontstack.com/
+request google fonts upon page lunching: https://fonts.google.com/
+text generator: https://loremipsum.io/
+                http://lorem-ipsum.perbang.dk/
+images: flaticon.com
+Animations: https://giphy.com/
+CSS button generator: https://www.css3buttongenerator.com/
+
+code play ground: codeply.com
+bootstrap: https://getbootstrap.com/
+
+looking at other peoples design patterns: https://www.awwwards.com/websites/clean
+                                        ui-patterns.com
+                                        https://dribbble.com
+                                        bootsnipp.com
+
+Wireframing sites: sneakpeekit.com
+                    balsamiq.cloud
+
+icons: https://fontawesome.com/
+
+incooporating JQuery in html: https://developers.google.com/speed/libraries/#jquery
+
+reducing file size: www.minifier.org

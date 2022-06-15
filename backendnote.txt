@@ -1,0 +1,28 @@
+node.js repo/Document : nodejs.org/api/
+
+
+working with APIs: postman.com
+
+
+
+> npm init
+> npm install express
+> node server.js
+> nodemon server.js
+
+------Creating or automating file path
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/index.html");
+});
+
+
+----API (Application Programming Interface)---------------
+
+-Endpoints: https://api.kanye.rest more like a url
+-Paths: https://v2.jokeapi.dev/joke/Any?type=single&contains=debugging
+-Parameter: https://v2.jokeapi.dev/joke/Any?type=single&contains=debugging
+-Authentication: https://api.openweathermap.org/data/2.5/weather?q=Paris&appid={API key}&units=metric
+
+API url generator: use the app postman or download from link--> https://www.postman.com/downloads/
+
+know your https status code: develop.mozilla.org..... statusCode

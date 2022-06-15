@@ -1,0 +1,571 @@
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+<h5>Heading level 5</h5>
+<h6>Heading level 6</h6>
+
+<!--Everything here is a comment-->
+<br>
+<!-- element without closing tag, its a line breaker element-->
+
+<meta> check meta tags on mdn web docs site
+
+<!-- paragraph tag -->
+<p>the one </p>
+
+<!-- italize in html; (use the em more often because it stresses emphasis)-->
+<em></em> vs <i></i>
+
+<!-- bold tags; use the strong tag more often-->
+<strong></strong> vs <b></b>
+
+<!-- horizontal line -->
+<hr>
+
+<!-- bullet list mdn (making search) -->
+<ul>
+    <li>Milk</li>
+    <li>Cheese
+        <ul>
+            <li>Blue cheese</li>
+            <li>Feta</li>
+        </ul>
+    </li>
+</ul>
+
+
+
+
+
+<ul>
+    <li>Neil Armstrong</li>
+    <li>Alan Bean</li>
+    <li>Peter Conrad</li>
+    <li>Edgar Mitchell</li>
+    <li>Alan Shepard</li>
+</ul>
+
+<!-- Ordered Listing : This listing could be set to follow a roman numerial
+type ( <ol type="i"> ) or it could be set to start from a particular number
+    (<ol strart="7">)  -->
+<ol>
+    <li>Mix flour, baking powder, sugar, and salt.</li>
+    <li>In another bowl, mix eggs, milk, and oil.</li>
+    <li>Stir both mixtures together.</li>
+    <li>Fill muffin tray 3/4 full.</li>
+    <li>Bake for 20 minutes.</li>
+</ol>
+
+
+<!-- imagine tag  -->
+<img src="source of the image" alt="what should be displayed if pic doesnt show by browser">
+
+<!-- create account on photobucket to be able to upload images and generate urls -->
+<!-- to create and crop images use crop-circle.imageonline.co -->
+
+<!-- hyper links  -->
+<a href="https://github.com/Tobi-DataDetective">github</a>
+
+<!-- Working with tables (cellspacing, boarder)-->
+<table>
+    <tr>
+        <td>John</td>
+        <td>Doe</td>
+    </tr>
+    <tr>
+        <td>Jane</td>
+        <td>Doe</td>
+    </tr>
+</table>
+<!-- table with header body and foot -->
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <td></td>
+        </tr>
+
+    </thead>
+    <tbody>
+
+    </tbody>
+    <tfoot>
+
+    </tfoot>
+</table>
+<!-- table spacing -->
+<table cellspacing="20" border="1"></table>
+
+<!-- win+. or win+; to pull up the emoji inspector -->
+
+<!-- creating forms using html -->
+<label for="">Your Name:</label>
+<input type="text" name="" id="">
+<input type="submit" name="">
+<label for="">Whats your favorite color?</label><input type="color" name="" id="">
+<br>
+<label for="">Male</label><input type="checkbox" name="" id="">
+<label for="">Female</label><input type="checkbox" name="" id="">
+<input type="file" name="" id="">
+<input type="date" name="" id="">
+<input type="radio" name="" id="">
+<input type="range" name="" id="">
+
+
+
+
+
+
+<!-- Introduction to CSS -->
+
+<!-- Google: Change background color using css -->
+
+<body style="background-color: blue;">
+
+</body>
+<!-- color hunt SITE for checking color pallet -->
+
+recall that the browser has default css already programmmed on the site to check for the default css google "css default values"
+<!-- hr	display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;	 
+    
+    Example is the boreder style, changing the default of inset to none
+    
+    border-style: none;
+    border-style: hidden;
+    border-style: dotted;
+    border-style: dashed;
+    border-style: solid;
+    border-style: double;
+    border-style: groove;
+    border-style: ridge;
+    border-style: inset;
+    border-style: outset;-->
+
+<!-- Editing the height of an hr
+/* <length> values */
+height: 120px;
+height: 10em;
+
+/* <percentage> value */
+height: 75%; -->
+
+
+<!-- pesticde for chrome to understand web page tabulation -->
+
+<!-- note the difference inline css internal css and external css -->
+
+CSS Syntax
+<!-- https://www.appbrewery.co/p/web-development-course-resources -->
+
+<!-- 
+
+selector{proprty:value;} 
+h1{color: black;}
+
+keep your properties in alphabetical order
+
+class attributes allows for differentiating html element attributes
+
+<img class="bacon" src="https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/bacon_1f953.png" alt="bacon-img">
+    <img class="broccoli circular" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/broccoli_1f966.png" alt="broccoli-img">
+
+.bacon {
+    background-color: green;
+}
+
+.broccoli {
+    background-color: red;
+}
+
+id selectors this give like a finger print to each selectors
+    <h1 id="heading">I Love Bacon</h1>
+
+    #heading {
+    color: blue;
+}
+
+Having more than one class in the class equation
+    <img class="broccoli circular" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/broccoli_1f966.png" alt="broccoli-img">
+
+meanwhile you cant do the above on ids
+
+SUDO CLASS
+-->
+
+<!-- 
+    What are favicon? favorite icon
+    favicon.cc
+    https://codepen.io/pen/
+    https://devdocs.io/
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul
+    https://colorhunt.co/
+    https://www.appbrewery.co/p/web-development-course-resources
+
+    <link rel="icon" href="favicon.ico">
+
+
+    HTML    DIVS
+    its a content division element
+
+
+    CSS BOX MODEL
+    {width:100%} this is relative to the view pot 
+    {height:300px}
+    {width:600px}
+    {border:solid}
+    {border-width:50px}
+    {border-width:0px 10px 20px 30px}
+    {border-top:0px}
+    {padding:20px}
+    {margin:10px}
+
+    
+element.style {
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: solid 10px;
+    margin: 10px;
+}
+ -->
+
+<!-- Practice 
+    
+    .top_container {
+    background-color: #E4F9F5;
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: solid 10px;
+    /* margin: 10px; */
+}
+
+.middle_container {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: solid 20px;
+    /* margin: 10px; */
+    margin-left: 260px;
+}
+
+.bottom_container {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: solid 10px;
+    /* margin: 10px; */
+    margin-left: 540px;
+} 
+-->
+<!-- 
+CSS DISPALY PROPTIES
+Block
+inline
+inline-block
+None
+
+Block Elements:
+- Paragraph (<p>)
+- Headers h1 through to h6
+- Divisions <div>
+- Lists and list items <ol>,<ul>, and <li>
+- Forms <form>
+
+Inline Display Element
+- Spans <span>
+- images <img>
+- anchors <a>
+
+    Practice
+                <p>hello</p>
+                <p>world</p>
+
+                <span>hello</span>
+                <span>world</span>
+
+                p {
+                background-color:red;
+                width: 100px;
+                display: inline-block;
+                }
+
+                span {
+                background-color:blue;
+                width: 100px;
+                display: inline-block;
+                }
+
+    Practice using the None display attribute
+                <p>hello</p>
+                <p class="second-p">world</p>
+
+                <span>hello</span>
+                <span>world</span>
+
+                p {
+                background-color:red;
+                width: 100px;
+                display: inline-block;
+                }
+
+                span {
+                background-color:blue;
+                width: 100px;
+                display: inline-block;
+                }
+                .second-p {
+                display: none;
+                }
+    Method 2:   .second-p {
+                visibility: hidden;
+                }
+
+
+
+CSS POSITIONING
+Static
+Relative
+Absolute
+Fixed
+
+Practice
+                    <body>
+                    <div class="red"></div>
+                    
+                    <div class="blue"></div>
+                    
+                    <div class="yellow"></div>
+                    </body>
+
+                    .red {
+                    height: 100px;
+                    width: 100px;
+                    background-color: red;
+                    }
+
+                    .blue {
+                    height: 100px;
+                    width: 100px;
+                    background-color: blue;
+                    }
+
+                    .yellow {
+                    height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    }
+
+Practise 2 Using relative positioning
+
+                    .red {
+                    height: 100px;
+                    width: 100px;
+                    background-color: red;
+                    position:relative; /*this postion is relative to its position*/
+                    /*   left:20px this pushes at a distance relative to the previous positioning*/
+                    display:inline-block;
+                    left: 200px
+                    }
+
+                    .blue {
+                    height: 100px;
+                    width: 100px;
+                    background-color: blue;
+                    display: inline-block;
+                    position:relative;
+                    right:100px;
+                    }
+
+                    .yellow {
+                    height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    display: inline-block;
+                    position:relative;
+                    right:100px;
+                    }
+
+Practice 3 Using Absolute Positioning (elements behave like floating elements on the field)
+                    
+                    body {
+                    margin:0;
+                    }
+                    .red {
+                    height: 100px;
+                    width: 100px;
+                    background-color: red;
+                    position: absolute;
+                    left:200px;
+                    top:200px;
+                    }
+
+                    .blue {
+                    height: 100px;
+                    width: 100px;
+                    background-color: blue;
+                    position: absolute;
+                    left: 100px;
+                    top:100px;
+                    }
+
+                    .yellow {
+                    height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    position: absolute;
+                    }
+
+Practice 4
+
+                    <body>
+                    <div class="black">
+                    <div class="red"></div>
+                    </div>
+                    
+                    <div class="blue"></div>
+                    
+                    <div class="yellow"></div>
+                    </body>
+
+
+                    body {
+                    margin:0;
+                    }
+                    .black {
+                    position: relative;
+                    height: 300px;
+                    width: 300px;
+                    background-color:black;
+                    }
+                    .red {
+                    height: 100px;
+                    width: 100px;
+                    background-color: red;
+                    position: absolute;
+                    right:20px; /* this is not acting relative to the black field*/
+                    }
+
+                    .blue {
+                    height: 100px;
+                    width: 100px;
+                    background-color: blue;
+                    position: absolute;
+                    left:100px;
+                    }
+
+                    .yellow {
+                    height: 100px;
+                    width: 100px;
+                    background-color: yellow;
+                    position: absolute;
+                    }
+
+Practice 5 (CSS above redo)
+
+                body {
+                margin:0;
+                }
+                .black {
+                position: relative;
+                height: 300px;
+                width: 300px;
+                background-color:black;
+                }
+                .red {
+                height: 100px;
+                width: 100px;
+                background-color: red;
+                position: absolute;
+                right:0; /* this is not acting relative to the black field*/
+                }
+
+                .blue {
+                height: 100px;
+                width: 100px;
+                background-color: blue;
+                position: absolute;
+                left:100px;
+                top:0;
+                }
+
+                .yellow {
+                height: 100px;
+                width: 100px;
+                background-color: yellow;
+                position: absolute;
+                top:0;
+                }
+
+PRACTICE USING FIXED POSITIONING (ALLOWS SCROLLING WITHOUT DISAPPEARING)
+<body>
+  <div class="black">
+  <div class="red"></div>
+  </div>
+  
+  <div class="blue"></div>
+  
+  <div class="yellow"></div>
+  
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  <h1>hello world</h1>
+  
+</body>
+
+ADD THE PREVIOUS CSS CODE AND CHANGE THE YELLOW POSTIONING TO FIXED
+ -->
+
+<!-- 
+Working with FONTS
+
+font-size: 100% = 16px = 1em
+ therefore 90px will be 90px/16=5.625x100
+ therefore 90px = 5.625em
+
+ most used scle is rem (root em)
+
+
+ CSS FLOAT AND CLEAR
+
+            .data-science-img {
+                width: 25%;
+                float: left;
+            }
+
+CLEAR: This could be seen as anti float
+only use floats when its only really necessary and that is rapping text arround an element
+Do not us it for positioning
+
+            .code-skill-description-1 {
+                clear: left;
+            }
+  -->
