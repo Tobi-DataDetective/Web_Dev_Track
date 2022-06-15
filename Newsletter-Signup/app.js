@@ -1,88 +1,66 @@
-// jshint esversion: 6
-//list id: 5f482e1d0e
-// api key: 7bebce77391ca764ea7cab04a5076be7-us13
-
+//jshint esversion: 6
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
-
-
-// implementing the mail-chimp API
-// const mailchimp = require('@mailchimp/mailchimp_marketing');
-
-// mailchimp.setConfig({
-//     apiKey: '7bebce77391ca764ea7cab04a5076be7-us13',
-//     server: 'us13',
-// });
-
-
-const mailchimp = require('@mailchimp/mailchimp_marketing');
-mailchimp.setConfig({
-    apiKey: "7bebce77391ca764ea7cab04a5076be7-us13",
-    server: "us13",
-});
+const https = require("https");
+const { url } = require("inspector");
+const { options } = require("request");
+const { json } = require("body-parser");
 
 const app = express();
 
-app.use(express.static("public")); // making the css and image folder publicly available with server
-app.use(bodyParser.urlencoded({ extended: true })) //making use of the bodyparser library
+//list id: 5f482e1d0e
+// api key: 7bebce77391ca764ea7cab04a5076be7-us13
 
-// calling in the signup.html file
+app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// home route
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/signup.html");
 });
 
-// creating the post route
 app.post("/", function(req, res) {
-    var firstName = req.body.fName;
-    var lastName = req.body.lName;
-    var email = req.body.email;
 
-    console.log(firstName, lastName, email);
+    const firstName = req.body.fName;
+    const lastName = req.body.lName;
+    const email = req.body.email;
 
 
-    const listId = "5f482e1d0e";
-    const subscribingUser = {
-        firstNames: firstName,
-        lastNames: lastName,
-        emails: email
-    };
-
-    async function addMember() {
-        const response = await mailchimp.lists.addListMember(listId, {
-            email_address: subscribingUser.emails,
+    var data = {
+        members: [{
+            email_address: email,
             status: "subscribed",
             merge_fields: {
-                FNAME: subscribingUser.firstNames,
-                LNAME: subscribingUser.lastNames
+                FNAME: firstName,
+                LNAME: lastName
             }
-        });
 
-        console.log(
-            `Successfully added contact as an audience member. The contact's id is ${
-          response.id
-        }.`
-        );
+        }]
     }
 
-    addMember();
+    //list id: 738060a7ab
 
-    // // posting with mail chimp API in use
-    // const addMember = async() => {
-    //     const response = await mailchimp.lists.addListMember("5f482e1d0e", {
-    //         email_address: email,
-    //         status: "subscribed",
-    //         merge_fields: {
-    //             FNAME: subscribingUser.firstName,
-    //             LNAME: subscribingUser.lastName
-    //         }
-    //     });
-    //     // console.log(response);
-    // };
+    // api key: 1b7e93caf6c6685ec8b158c048440756-us9
+    const jsonData = JSON.stringify(data);
+    const url = "https://us9.api.mailchimp.com/3.0/lists/738060a7ab"
 
-    // addMember();
+    const options = {
+        method: "post",
+        auth: "folayan:1b7e93caf6c6685ec8b158c048440756-us9"
+    }
+
+    const request = https.request(url, options, function(response) {
+        response.on("data", function(data) {
+            console.log(JSON.parse(data))
+        });
+    });
+    request.write(jsonData);
+    // console.log(firstName, lastName, email);
+    request.end();
 });
+
 
 
 app.listen(3000, function() {
