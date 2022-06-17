@@ -1,36 +1,27 @@
 const bodyParser = require("body-parser");
 const express = require("express");
+const date = require(__dirname + "/date.js") // initiating the date.js file
 
 const app = express();
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let workItems = [];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = [];
 app.set("view engine", "ejs"); // checks into the views folder for ejs file
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
 app.get("/", function(req, res) {
-    let today = new Date();
-    // let currentDay = today.getDay();
-    // let day = "";
 
-    let options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
+    const day = date.getDay(); // activating the date.js file
 
-    let day = today.toLocaleDateString("en-US", options);
-
-
-    res.render("list", { listTitle: day, newListItems: items }); //kindOfDay = to letiable made in the list.ejs file
+    res.render("list", { listTitle: day, newListItems: items }); //kindOfDay = to constiable made in the list.ejs file
 });
 
 
 app.post("/", function(req, res) {
     // console.log(req.body);
-    let item = req.body.newItem;
+    const item = req.body.newItem;
 
     if (req.body.list === "Work") {
         workItems.push(item);
@@ -46,7 +37,7 @@ app.get("/work", function(req, res) {
 });
 
 app.post("/work", function(req, res) {
-    let item = req.body.newItem;
+    const item = req.body.newItem;
     workItems.push(item);
     res.redirect("/work");
 });
