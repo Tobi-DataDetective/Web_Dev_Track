@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!-- calling in the header.ejs template file -->
+<%- include("header")-%>
 
-<head>
-    <meta charset="UTF-8">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-
-<body>
     <div class="box" id="heading">
         <h1>
-            <%= kindOfDay %>
+            <%= listTitle %>
         </h1>
     </div>
 
@@ -27,12 +20,9 @@
 
                 <form class="" action="/" method="post">
                     <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-                    <button type="submit" name="button">+</button>
+                    <button type="submit" name="list" value=<%=listTitle%>>+</button>
                 </form>
     </div>
 
-
-
-</body>
-
-</html>
+    <!-- calling in the footer.ejs template file -->
+    <%- include("footer")-%>
