@@ -30,3 +30,6 @@ icons: https://fontawesome.com/
 incooporating JQuery in html: https://developers.google.com/speed/libraries/#jquery
 
 reducing file size: www.minifier.org
+
+
+mongoDB file path: C:\Program Files\MongoDB\Server\5.0\data\
