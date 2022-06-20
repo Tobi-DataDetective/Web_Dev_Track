@@ -1,0 +1,66 @@
+const mongoose = require("mongoose")
+
+// Create a connection
+mongoose.connect('mongodb://localhost:27017/fruitsDB', { useNewUrlParser: true });
+
+// create a schema with validations
+const fruitSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, "Please check data entry no name specified"]
+    },
+    rating: {
+        type: Number,
+        min: 1,
+        max: 10
+    },
+    review: String
+});
+
+// create a model
+const Fruit = mongoose.model("Fruit", fruitSchema);
+
+// creating the document
+
+const fruit = new Fruit({
+    rating: 10,
+    review: "Great Fruit"
+});
+
+
+fruit.save(); //save the fruit document with the Fruit model inside out fruitsDB
+
+const personSchema = new mongoose.Schema({
+    name: String,
+    age: Number
+});
+
+const Person = mongoose.model("Person", personSchema);
+
+const person = new Person({
+    name: "David",
+    age: 32
+});
+
+// person.save()
+
+
+
+
+
+
+
+Fruit.find(function(err, fruits) {
+    if (err) {
+        console.log(err);
+    } else {
+        // console.log(fruits);
+
+        mongoose.connection.close();
+
+        fruits.forEach(function(fruit) {
+            console.log(fruit.name);
+
+        });
+    }
+});
