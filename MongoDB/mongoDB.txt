@@ -1,0 +1,117 @@
+>help
+>show dbs
+
+Creating Database
+> use shopDB
+note: for it to be listed among the other Database it has to have content
+
+------------CREATE----------------
+> db.products.insertOne({
+    _id: 1,
+    name: "Pen",
+    price: 1.20
+})
+> show collections   // this shows all the tables in the shopDB [products=collections=table(SQL)=document(NoSQL)]
+>db.products.insertOne({
+    _id: 2,
+    name: "Pencil",
+    price: 0.80
+})
+
+
+
+------------READ----------------
+>db.products.find()
+>db.products.find({
+    name: "Pencil"
+})
+
+> db.products.find(
+    {price: {$gt: 1}}
+    )
+
+> db.products.find(
+    {_id: 1},
+    {name: 1,
+    _id: 0}    
+    )
+
+---------UPDATE------
+> db.products.updateOne(
+    {_id: 1},
+    {$set:{stock: 32}}
+    )
+
+> db.products.updateOne(
+    {_id: 2},
+    {$set:{stock: 12}}
+    )
+
+
+------- DELETE --------
+> db.products.deleteOne(
+    {_id: 2}
+)
+
+
+
+
+---------RELATIONSHIPS---------
+
+== One-To-Many (Format 1)
+
+> db.products.insert(
+    {
+        _id: 3,
+        name: "Rubber",
+        price: 1.30,
+        stock: 43,
+        reviews: [
+            {
+                authorName: "Sally",
+                rating: 5,
+                reviews: "Best rubber ever!"
+            }
+        ]
+    }
+)
+
+> db.products.insert(
+    {
+        _id: 2,
+        name: "Pencil",
+        price: 0.80,
+        stock: 12,
+        reviews: [
+            {
+                authorName: "James",
+                rating: 5,
+                reviews: "Fantastic!"
+            },
+            {
+                authorName: "Jono",
+                rating: 5,
+                reviews: "The best pencil i have used in my life!"
+            }
+        ]
+    }
+)
+
+
+== Format 2
+{
+    _id: 1,
+    name: "Pen",
+    price: 1.20,
+    stock: 32
+}
+{
+    _id: 2,
+    name: "Pencil",
+    price: 0.80,
+    stock: 12
+}
+{
+    orderNumber: 3243,
+    productsOrdered: [1,2]
+}
