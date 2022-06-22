@@ -1,0 +1,45 @@
+Most important principles in building RESTful API are:
+- Use HTTP Request verbs
+- Use specific pattern of routes/endpoint URLs
+
+HTTP verbs:
+GET    POST   PUT  PATCH   DELETE
+
+GET = READ
+
+POST = CREATE
+
+PUT PATCH == UPDATE
+
+DELETE = DELECT
+
+PUT IS SIMPLY REPLACING THE THE BICYCLE WITH A NEW ONE, WHILE PATCH IS REPLACING THE SPOILT TYRE RATHER THAN THE WHOLE BICYCLE
+
+[
+    {
+        "_id": "62b2c2d05de121207ca9c089",
+        "title": "REST",
+        "content": "REST is short for REpresentation state transfer. It's an architectural style for designing APIs."
+    },
+    {
+        "_id": "5c139771d79ac8eac11e754a",
+        "title": "API",
+        "content": "API stands for Application Programming Interface. It is a set of subroutine definitions, communication protocols, and tools for building software. In general terms, it is a set of clearly defined methods of communication among various components. A good API makes it easier to develop a computer program by providing all the building blocks, which are then put together by the programmer."
+    },
+    {
+        "_id": "5c1398aad79ac8eac11e7561",
+        "title": "Bootstrap",
+        "content": "This is a framework developed by Twitter that contains pre-made front-end templates for web design"
+    },
+    {
+        "_id": "5c1398ecd79ac8eac11e7567",
+        "title": "DOM",
+        "content": "The Document Object Model is like an API for interacting with our HTML"
+    },
+    {
+        "_id": "62b2dd5c5d8951a70deb236f",
+        "title": "Bear",
+        "content": "Drowning in onces drunkeness",
+        "__v": 0
+    }
+]
