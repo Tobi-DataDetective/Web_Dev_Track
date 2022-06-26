@@ -75,7 +75,9 @@ app.route("/articles")
 
 //////////////////////////////Targetting A Specific Article//////////////////////////
 
+
 app.route("/articles/:articleTitle")
+    // getting an article inputed by the user
     .get(function(req, res) {
         Article.findOne({ title: req.params.articleTitle }, function(err, foundArticle) {
             if (foundArticle) {
@@ -84,22 +86,41 @@ app.route("/articles/:articleTitle")
                 res.send("Article title does not exist!");
             }
         });
+    })
+    // updating the title and content symonthenously
+    .put(function(req, res) {
+        Article.updateOne({ title: req.params.articleTitle }, { $set: { title: req.body.title, content: req.body.content } }, { overwrite: true },
+            function(err) {
+                if (!err) {
+                    res.send("Successfully Updated!");
+                }
+            });
+    })
+    // allowing for user input of what to update
+    .patch(function(req, res) {
+        Article.updateOne({ title: req.params.articleTitle }, { $set: req.body },
+            function(err) {
+                if (!err) {
+                    res.send("Successfully Updated!");
+                } else {
+                    res.send(err);
+                }
+            });
+    })
+    // Deleting a particular article from the database
+    .delete(function(req, res) {
+        Article.deleteOne({ title: req.params.articleTitle },
+            function(err) {
+                if (!err) {
+                    res.send("Successfully Deleted!");
+                } else {
+                    res.send(err);
+                }
+            });
     });
-
-
-
-// .post()
-// .delete()
-
-
-
-
-
-
-
-
-
 
 app.listen(3000, function() {
     console.log("Running on port 3000");
 });
+
+// postmon link: http://localhost:3000/articles/Alcohol
