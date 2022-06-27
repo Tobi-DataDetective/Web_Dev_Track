@@ -1,11 +1,15 @@
 //jshint esversion:6
+
+require('dotenv').config(); //a pacakage required during level 3 encryption
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const encrypt = require("mongoose-encryption");
+const encrypt = require("mongoose-encryption"); //a package required during level 2 encryption 
 
 const app = express();
+
+console.log(process.env.API_KEY);
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -21,8 +25,10 @@ const userSchema = new mongoose.Schema({
 });
 
 // defining a secret,(for password encryption) then implementing it
-const secret = "Thisisourlittlesecret.";
-userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });
+// const secret = "Thisisourlittlesecret.";   -----now in the .env file
+// userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });  -- converted to the below code
+userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ['password'] });
+
 
 // creating model
 
