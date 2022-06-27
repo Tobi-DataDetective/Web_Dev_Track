@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     password: String
 });
 
-// defining a secret, then implementing it
+// defining a secret,(for password encryption) then implementing it
 const secret = "Thisisourlittlesecret.";
 userSchema.plugin(encrypt, { secret: secret, encryptedFields: ['password'] });
 
@@ -53,7 +53,7 @@ app.post("/register", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("secrets");
+            res.render("secrets"); //encrypting the password in the DB
         }
     });
 });
