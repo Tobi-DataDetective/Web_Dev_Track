@@ -6,10 +6,15 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 
+
 // implementing passport libraries
 const session = require('express-session');
 const passport = require('passport');
 const passportLocalMongoose = require('passport-local-mongoose');
+
+// OAUTH library
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate');
 
 
 const app = express();
@@ -43,8 +48,9 @@ const userSchema = new mongoose.Schema({
     password: String
 });
 
-// enabling the passportLocalMongoose package
+// enabling the passportLocalMongoose and findOrCreate package/plugin
 userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
 
 // creating model
 
@@ -54,6 +60,20 @@ const User = new mongoose.model("User", userSchema);
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+// initializing the google strategy
+passport.use(new GoogleStrategy({
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: "http://localhost:3000/auth/google/secret",
+        userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+        user.findOrCreate({ googleId: profile.id }, function(err, user) {
+            return cdb(err, user);
+        });
+    }
+));
 
 app.get("/", function(req, res) {
     res.render("home");
@@ -120,3 +140,8 @@ app.post("/login", function(req, res) {
 app.listen(3000, function() {
     console.log("Running on port 3000");
 });
+
+
+
+// npm install passport-google-oauth20
+// npm install mongoose-findorcreate
