@@ -45,7 +45,9 @@ mongoose.connect("mongodb://localhost:27017/userDB", { useNewUrlParser: true });
 // creating schema, the "new mongoose.Schema()" keyword allows for making encryption and mongoose schema
 const userSchema = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    googleId: String,
+    secret: String
 });
 
 // enabling the passportLocalMongoose and findOrCreate package/plugin
@@ -58,8 +60,18 @@ const User = new mongoose.model("User", userSchema);
 
 // enabling the passport on the schema
 passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+
+// replacing the above serializeUser and deserializeUser
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
 
 // initializing the google strategy
 passport.use(new GoogleStrategy({
@@ -69,6 +81,8 @@ passport.use(new GoogleStrategy({
         userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
     },
     function(accessToken, refreshToken, profile, cb) {
+        console.log(profile);
+
         user.findOrCreate({ googleId: profile.id }, function(err, user) {
             return cdb(err, user);
         });
@@ -78,6 +92,20 @@ passport.use(new GoogleStrategy({
 app.get("/", function(req, res) {
     res.render("home");
 });
+
+
+
+// oauth path route
+app.get("/auth/google", function(req, res) {
+    passport.authenticate("google", { scope: ["profile"] });
+});
+app.get("/auth/google/secret",
+    passport.authenticate("google", { failureRedirect: "/login" }),
+    function(req, res) {
+        // successful authentication, redirect to secrets.
+        res.redirect('/');
+    });
+
 
 
 app.get("/login", function(req, res) {
@@ -90,14 +118,54 @@ app.get("/register", function(req, res) {
 });
 
 app.get("/secrets", function(req, res) {
+    User.find({ "secret": { $ne: null } }, function(err, foundUsers) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (foundUsers) {
+                res.render("secrets", { usersWithSecrets: foundUsers });
+            }
+        }
+    });
+
+
+    // if (req.isAuthenticated()) {
+    //     res.render("secrets");
+    // } else {
+    //     res.redirect("/login");
+    // }
+});
+
+// submit get route
+app.get("/submit", function(req, res) {
     if (req.isAuthenticated()) {
-        res.render("secrets");
+        res.render("submit");
     } else {
         res.redirect("/login");
     }
 });
+// submit post route
+app.post("/submit", function(req, res) {
+    const submittedSecret = req.body.secret;
+
+    console.log(req.user.id);
+
+    User.findById(req.user.id, function(err, foundUser) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (foundUser) {
+                foundUser.secret = submittedSecret;
+                foundUser.save(function() {
+                    res.redirect("/secrets");
+                });
+            }
+        }
+    });
+});
+
 // creating a logout route
-app.get('/logout', function(req, res, next) {
+app.get("/logout", function(req, res, next) {
     req.logout(function(err) {
         if (err) { return next(err); }
         res.redirect('/');
@@ -145,3 +213,5 @@ app.listen(3000, function() {
 
 // npm install passport-google-oauth20
 // npm install mongoose-findorcreate
+// evm keys
+// social buttons for bootstrap, place file in public. css level
