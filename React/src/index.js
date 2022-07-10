@@ -35,18 +35,19 @@
 // );
 /////////////////////////////////////////////////////////////////
 
-import React from "react";
-import ReactDom from "react-Dom";
 
-ReactDom.render( <
-    div >
-    <
-    h1 > My Favorite food < /h1> <
-    ul >
-    <
-    li > Beacon < /li> <
-    li > Jamon < /li>     <
-    li > Noodles < /li>     <
-    /ul>     <
-    /div>
-)
+// STYLING //
+// import React from "react";
+// import ReactDom from "react-Dom";
+
+// ReactDom.render(
+// <div>
+// <h1 className="heading">My Favorite food</h1>
+// <ul>
+// <li>Beacon</li>
+// <li>Jamon</li>    
+// <li>Noodles</li>    
+// </ul>    
+// </div>,
+// document.getElementById("root")
+// );
