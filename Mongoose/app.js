@@ -27,12 +27,13 @@ const fruit = new Fruit({
     review: "Great Fruit"
 });
 
+
 const pineapple = new Fruit({
-        name: "Pineaple",
-        rating: 9,
-        review: "Great fruit"
-    })
-    // pineapple.save()
+    name: "Pineaple",
+    rating: 9,
+    review: "Great fruit"
+})
+pineapple.save()
 
 const mango = new Fruit({
     name: "Mango",
@@ -60,7 +61,7 @@ const person = new Person({
     favouriteFruit: pineapple
 });
 
-// person.save()
+person.save()
 
 
 // updating Davids previous recored with a favourite fruit attribute
