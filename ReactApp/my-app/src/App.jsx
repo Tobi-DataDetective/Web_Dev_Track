@@ -1,17 +1,9 @@
 import React from "react";
-import Heading from "./Heading";
-import Lists from "./Lists";
+import Header from "./Header";
 
 function App() {
     return ( <
-        div >
-        <
-        Heading / >
-        <
-        Lists / >
-        <
-        /div>
-    );
+        Header / >
+    )
 }
-
 export default App;
