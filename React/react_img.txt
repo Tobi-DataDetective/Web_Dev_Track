@@ -141,5 +141,53 @@ numbers.find(function (num){
   return num > 10;
 });
 
+///////////////FINDINDEX - returns the index of the first item that matches
+
+const newNumber = numbers.findIndex(function(num){
+  return num > 10;
+});
 
 
+/////////// Practice Challenge
+
+import emojipedia from"./emojipedia"
+
+const newEmojipedia = emojipedia.map(function (emojiEntry){
+  return emojiEntry.meaning.subString(0,100);
+})
+
+console.log(newEmojipedia);
+
+
+////////////ES6 and Arrow function
+number =[23,46,24,67]
+
+function square(x){
+  return x * x;
+}
+const newNumber = number.map(square);
+
+**** above can be rewritten like 
+
+const newNumber = number.map(function(x){
+  return x * x;
+})
+
+**** also rewritten as 
+const newNumber = number.map( x => {
+  return x * x;
+})
+
+const newNumber = number.map( (x, y) => {
+  return x * y;
+})
+
+**********if you have a single line expression
+const newNumber = number.map( x =>  x * x);
+
+//////////// Practice Challenge
+const newNumber = number.map(x => x*2);
+
+const newNumber = number.filter(x => x > 10);
+
+const newNumber = number.reduce((accumulator,currentNumber) => accumulator+currentNumber);
