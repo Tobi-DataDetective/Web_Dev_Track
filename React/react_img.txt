@@ -91,5 +91,55 @@ ReactDOM.render(
 
 
 
-///////////////////// React Component
+///////////////////// Map/Reduce/Filter
+
+var number = [3,56,7,48,5]
+
+function double(x){
+  return x*2;
+}
+
+const newNumbers = number.map(double)
+
+***Using the forEach function
+
+var newNumbers=[];
+numbers.forEach(function(x){
+  newNumbers.push(x*2);
+});
+console.log(newNumbers);
+
+////////////////FILTER
+
+const newNumbers = numbers.filter(function(num){
+  return num < 10;
+});
+
+////////// REDUCE
+finding the sum of the numbers in the array 
+***********using forEach function
+
+var = numbers = [3,56,7,10,48];
+
+var newNumber = 0;
+
+numbers.forEach(function(currentNumber){
+  newNumber += currentNumber
+});
+
+console.log(newNumber);
+
+***********using the reduce function
+ var newNumber = numbers.reduce(function(accumulator, currentNumber){
+  return accumulator + currentNumber;
+ });
+
+
+///////////////FIND - returns the first item that matches from an array
+
+numbers.find(function (num){
+  return num > 10;
+});
+
+
 
