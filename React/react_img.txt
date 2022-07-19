@@ -191,3 +191,9 @@ const newNumber = number.map(x => x*2);
 const newNumber = number.filter(x => x > 10);
 
 const newNumber = number.reduce((accumulator,currentNumber) => accumulator+currentNumber);
+
+
+
+
+/////////////////////// REACT STATE
+
